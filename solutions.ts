@@ -1,13 +1,3 @@
-console.log("Hello from solutions");
-
-function multiplyer(a: number, b: number): number {
-    return a * b;
-}
-
-console.log(multiplyer(5, 6));
-
-
-//Problem 1
 
 function multiplyValue(value: number, multiplier?: number): number {
     if(multiplier===undefined){
@@ -16,13 +6,6 @@ function multiplyValue(value: number, multiplier?: number): number {
 return value*multiplier;
 }
 
-console.log(multiplyValue(10));
-console.log(multiplyValue(10, 5));
-console.log(multiplyValue(7, 0));
-
-
-
-//Problem 2
 
 function processInput (value: string | number | boolean): string | number {
 
@@ -46,14 +29,6 @@ function processInput (value: string | number | boolean): string | number {
 }
 
 
-console.log(processInput("  Taifur RAHMAN  ")); 
-console.log(processInput(9));                
-console.log(processInput(true));             
-console.log(processInput(false));            
-
-
-//Problem 3
-
 function formatCoordinate  (
     coordinate: readonly [number, number, string]
 ): string {
@@ -61,26 +36,11 @@ function formatCoordinate  (
     return `Location: ${locationName} (${latitude}, ${longitude})`;
 }
 
-console.log(formatCoordinate ([23.81, 90.41, "Dhaka"]));
-console.log(formatCoordinate ([22.35, 91.78, "Chittagong"]));
-console.log(formatCoordinate([30, 0, "London"]));
-
-
-
-//Problem 4
 
 function concatenateArrays <T>(...arrays: T[][]): T[] {
     return ([] as T[]).concat(...arrays);
 }
 
-console.log(concatenateArrays (["a", "b"], ["c", "d"]));
-
-console.log(concatenateArrays ([1, 2], [3, 4], [5]));
-
-console.log(concatenateArrays ([1, 5,6 ,7],[9,0,7,5]))
-
-
-//problem 5
 
 interface Course {
     title: string;
@@ -104,11 +64,6 @@ const courses: Course[] = [
     { title: "Next.js Pro", students: 85, isPublished: true }
 ];
 
-console.log(getPopularCourses(courses, 40));
-
-
-//problem 6
-
 
 function pluckValues<T, K extends keyof T>(
     items: T[],
@@ -117,20 +72,6 @@ function pluckValues<T, K extends keyof T>(
     return items.map(item => item[key]);
 }
 
-// Sample Input
-const users = [
-    { id: 1, name: "Rakib", role: "Admin" },
-    { id: 2, name: "Sadia", role: "Editor" },
-    { id: 3, name: "Tariq", role: "Subscriber" }
-];
-
-console.log(pluckValues(users, "name"));
-
-console.log(pluckValues(users, "role"));
-
-
-
-//problem 7
 
 class Employee {
     protected name: string;
@@ -159,16 +100,6 @@ class Manager extends Employee {
     }
 }
 
-// Sample Input
-const manager = new Manager("Alice", 50000, "Engineering");
-
-console.log(manager.getDetails());
-console.log(manager.getRoleInfo());
-
-
-
-//problem 8
-
 
 function validateAgeAsync(age: number): Promise<string> {
     return new Promise((resolve, reject) => {
@@ -181,6 +112,3 @@ function validateAgeAsync(age: number): Promise<string> {
         }
     });
 }
-
-console.log(await validateAgeAsync(28));
-console.log(await validateAgeAsync(17));
