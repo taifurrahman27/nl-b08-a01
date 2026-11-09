@@ -60,4 +60,42 @@ const courses = [
     { title: "Next.js Pro", students: 85, isPublished: true }
 ];
 console.log(getPopularCourses(courses, 40));
+//problem 6
+function pluckValues(items, key) {
+    return items.map(item => item[key]);
+}
+// Sample Input
+const users = [
+    { id: 1, name: "Rakib", role: "Admin" },
+    { id: 2, name: "Sadia", role: "Editor" },
+    { id: 3, name: "Tariq", role: "Subscriber" }
+];
+console.log(pluckValues(users, "name"));
+console.log(pluckValues(users, "role"));
+//problem 7
+class Employee {
+    name;
+    baseSalary;
+    constructor(name, baseSalary) {
+        this.name = name;
+        this.baseSalary = baseSalary;
+    }
+    getDetails() {
+        return `Employee: ${this.name}, Base Salary: ${this.baseSalary}`;
+    }
+}
+class Manager extends Employee {
+    department;
+    constructor(name, baseSalary, department) {
+        super(name, baseSalary);
+        this.department = department;
+    }
+    getRoleInfo() {
+        return `Manager of ${this.department}: ${this.name}`;
+    }
+}
+// Sample Input
+const manager = new Manager("Alice", 50000, "Engineering");
+console.log(manager.getDetails());
+console.log(manager.getRoleInfo());
 export {};
