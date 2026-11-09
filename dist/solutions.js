@@ -50,4 +50,14 @@ function concatenateArrays(...arrays) {
 console.log(concatenateArrays(["a", "b"], ["c", "d"]));
 console.log(concatenateArrays([1, 2], [3, 4], [5]));
 console.log(concatenateArrays([1, 5, 6, 7], [9, 0, 7, 5]));
+function getPopularCourses(courses, minStudents) {
+    return courses.filter(course => course.isPublished === true && course.students >= minStudents);
+}
+const courses = [
+    { title: "TypeScript Mastery", students: 120, isPublished: true },
+    { title: "Draft Course", students: 200, isPublished: false },
+    { title: "Basic HTML", students: 45, isPublished: true },
+    { title: "Next.js Pro", students: 85, isPublished: true }
+];
+console.log(getPopularCourses(courses, 40));
 export {};
