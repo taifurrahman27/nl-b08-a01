@@ -164,3 +164,23 @@ const manager = new Manager("Alice", 50000, "Engineering");
 
 console.log(manager.getDetails());
 console.log(manager.getRoleInfo());
+
+
+
+//problem 8
+
+
+function validateAgeAsync(age: number): Promise<string> {
+    return new Promise((resolve, reject) => {
+        if (age < 18) {
+            reject(new Error("Access Denied: Must be 18 or older"));
+        } else {
+            setTimeout(() => {
+                resolve("Access Granted");
+            }, 1000);
+        }
+    });
+}
+
+console.log(await validateAgeAsync(28));
+console.log(await validateAgeAsync(17));
